@@ -12,7 +12,7 @@ namespace PaisAPI.Services
         {
             _blobService = blobService;
         }
-        private readonly string StringConexao = "Server=tcp:azure-at.database.windows.net,1433;Initial Catalog=AZURE_AT;Persist Security Info=False;User ID=juarez;Password={your_password};MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+        private readonly string StringConexao = "Server=tcp:azure-at.database.windows.net,1433;Initial Catalog=AZURE_AT;Persist Security Info=False;User ID=juarez;Password=Galo2021;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
         //private readonly string StringConexao = "Data Source=LAPTOP-JUNIOR;Initial Catalog=AZURE_AT;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False";
         private readonly string tipoContainer = "BandeiraPais";
         public Pais AlteraPais(AlteraPaisDTO alteraPaisDTO)
