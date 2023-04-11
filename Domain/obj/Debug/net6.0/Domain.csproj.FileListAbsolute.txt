@@ -1,0 +1,12 @@
+D:\juare\Google Drive\CURSOS\Infnet\Bloco6\DesenvWCFAzure\TPs\AT\infnet_bl6_dswcf_at\Domain\bin\Debug\net6.0\Domain.deps.json
+D:\juare\Google Drive\CURSOS\Infnet\Bloco6\DesenvWCFAzure\TPs\AT\infnet_bl6_dswcf_at\Domain\bin\Debug\net6.0\Domain.dll
+D:\juare\Google Drive\CURSOS\Infnet\Bloco6\DesenvWCFAzure\TPs\AT\infnet_bl6_dswcf_at\Domain\bin\Debug\net6.0\Domain.pdb
+D:\juare\Google Drive\CURSOS\Infnet\Bloco6\DesenvWCFAzure\TPs\AT\infnet_bl6_dswcf_at\Domain\obj\Debug\net6.0\Domain.csproj.AssemblyReference.cache
+D:\juare\Google Drive\CURSOS\Infnet\Bloco6\DesenvWCFAzure\TPs\AT\infnet_bl6_dswcf_at\Domain\obj\Debug\net6.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\juare\Google Drive\CURSOS\Infnet\Bloco6\DesenvWCFAzure\TPs\AT\infnet_bl6_dswcf_at\Domain\obj\Debug\net6.0\Domain.AssemblyInfoInputs.cache
+D:\juare\Google Drive\CURSOS\Infnet\Bloco6\DesenvWCFAzure\TPs\AT\infnet_bl6_dswcf_at\Domain\obj\Debug\net6.0\Domain.AssemblyInfo.cs
+D:\juare\Google Drive\CURSOS\Infnet\Bloco6\DesenvWCFAzure\TPs\AT\infnet_bl6_dswcf_at\Domain\obj\Debug\net6.0\Domain.csproj.CoreCompileInputs.cache
+D:\juare\Google Drive\CURSOS\Infnet\Bloco6\DesenvWCFAzure\TPs\AT\infnet_bl6_dswcf_at\Domain\obj\Debug\net6.0\Domain.dll
+D:\juare\Google Drive\CURSOS\Infnet\Bloco6\DesenvWCFAzure\TPs\AT\infnet_bl6_dswcf_at\Domain\obj\Debug\net6.0\refint\Domain.dll
+D:\juare\Google Drive\CURSOS\Infnet\Bloco6\DesenvWCFAzure\TPs\AT\infnet_bl6_dswcf_at\Domain\obj\Debug\net6.0\Domain.pdb
+D:\juare\Google Drive\CURSOS\Infnet\Bloco6\DesenvWCFAzure\TPs\AT\infnet_bl6_dswcf_at\Domain\obj\Debug\net6.0\ref\Domain.dll

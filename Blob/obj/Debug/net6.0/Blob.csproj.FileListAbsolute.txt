@@ -1,0 +1,12 @@
+D:\juare\Google Drive\CURSOS\Infnet\Bloco6\DesenvWCFAzure\TPs\AT\infnet_bl6_dswcf_at\Blob\obj\Debug\net6.0\Blob.csproj.AssemblyReference.cache
+D:\juare\Google Drive\CURSOS\Infnet\Bloco6\DesenvWCFAzure\TPs\AT\infnet_bl6_dswcf_at\Blob\obj\Debug\net6.0\Blob.GeneratedMSBuildEditorConfig.editorconfig
+D:\juare\Google Drive\CURSOS\Infnet\Bloco6\DesenvWCFAzure\TPs\AT\infnet_bl6_dswcf_at\Blob\obj\Debug\net6.0\Blob.AssemblyInfoInputs.cache
+D:\juare\Google Drive\CURSOS\Infnet\Bloco6\DesenvWCFAzure\TPs\AT\infnet_bl6_dswcf_at\Blob\obj\Debug\net6.0\Blob.AssemblyInfo.cs
+D:\juare\Google Drive\CURSOS\Infnet\Bloco6\DesenvWCFAzure\TPs\AT\infnet_bl6_dswcf_at\Blob\obj\Debug\net6.0\Blob.csproj.CoreCompileInputs.cache
+D:\juare\Google Drive\CURSOS\Infnet\Bloco6\DesenvWCFAzure\TPs\AT\infnet_bl6_dswcf_at\Blob\bin\Debug\net6.0\Blob.deps.json
+D:\juare\Google Drive\CURSOS\Infnet\Bloco6\DesenvWCFAzure\TPs\AT\infnet_bl6_dswcf_at\Blob\bin\Debug\net6.0\Blob.dll
+D:\juare\Google Drive\CURSOS\Infnet\Bloco6\DesenvWCFAzure\TPs\AT\infnet_bl6_dswcf_at\Blob\bin\Debug\net6.0\Blob.pdb
+D:\juare\Google Drive\CURSOS\Infnet\Bloco6\DesenvWCFAzure\TPs\AT\infnet_bl6_dswcf_at\Blob\obj\Debug\net6.0\Blob.dll
+D:\juare\Google Drive\CURSOS\Infnet\Bloco6\DesenvWCFAzure\TPs\AT\infnet_bl6_dswcf_at\Blob\obj\Debug\net6.0\refint\Blob.dll
+D:\juare\Google Drive\CURSOS\Infnet\Bloco6\DesenvWCFAzure\TPs\AT\infnet_bl6_dswcf_at\Blob\obj\Debug\net6.0\Blob.pdb
+D:\juare\Google Drive\CURSOS\Infnet\Bloco6\DesenvWCFAzure\TPs\AT\infnet_bl6_dswcf_at\Blob\obj\Debug\net6.0\ref\Blob.dll
