@@ -1,0 +1,56 @@
+﻿@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model PaisMVC.Models.Pais.Pais
+
+@{
+    ViewData["Title"] = "Detalhes";
+}
+
+<h1>Detalhes</h1>
+
+<div>
+    <h4>Pais</h4>
+    <hr />
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="card">
+                <img class="card-img-top" src="@Model.BandeiraId" alt="@Model.Nome">
+                <div class="card-body">
+                    <h5 class="card-title">@Model.Nome</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h4>Estados</h4>
+    <hr />
+    @{
+        var numberOfColsNeeded = 2;
+        var totalCounter = ViewBag.NumberOfEstados;
+        var itemCounter = 1;
+    }
+
+    @foreach (var pais in ViewBag.Estados)
+    {
+        if (itemCounter % numberOfColsNeeded == 1)
+        {
+            @:<div class="row" >
+        }
+    
+        <div class="col-sm-6">
+            <div class="card">
+                <img class="card-img-top" src="@pais.BandeiraId" alt="@pais.Nome">
+                <div class="card-body">
+                    <h5 class="card-title">@pais.Nome</h5>
+                </div>
+            </div>
+        </div>
+        if ((itemCounter % numberOfColsNeeded == 0) || ((itemCounter) == totalCounter))
+        {
+            @:</div>
+        }
+        itemCounter++;
+    }
+</div>
+<div>
+    @Html.ActionLink("Voltar à lista", "Index", "Países", null, new { @class="btn btn-light"})
+    @Html.ActionLink("Editar", "Editar", "Países", new { id=Model.Id }, new { @class="btn btn-info"})
+</div>

@@ -30,6 +30,11 @@ namespace EstadoAPI.Controllers
         {
             return _estadoService.SelecionaEstadoId(id);
         }
+        [HttpGet("pais/{paisId}")]
+        public IEnumerable<Estado> SelecionaEstadosPais(int paisId)
+        {
+            return _estadoService.SelecionEstadosPais(paisId);
+        }
 
         // POST api/<EstadoController>
         [HttpPost]

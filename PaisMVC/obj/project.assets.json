@@ -80,6 +80,37 @@
           }
         }
       },
+      "Flurl/3.0.7": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Flurl.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Flurl.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Flurl.Http/3.2.4": {
+        "type": "package",
+        "dependencies": {
+          "Flurl": "3.0.6",
+          "Newtonsoft.Json": "12.0.2",
+          "System.Text.Encoding.CodePages": "4.5.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/Flurl.Http.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Flurl.Http.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Microsoft.Bcl.AsyncInterfaces/1.1.1": {
         "type": "package",
         "compile": {
@@ -363,6 +394,19 @@
           "runtimes/win/lib/net6.0/Microsoft.Win32.SystemEvents.dll": {
             "assetType": "runtime",
             "rid": "win"
+          }
+        }
+      },
+      "Newtonsoft.Json/12.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
           }
         }
       },
@@ -759,7 +803,7 @@
           "System.Runtime.CompilerServices.Unsafe": "6.0.0"
         },
         "compile": {
-          "lib/net6.0/_._": {
+          "lib/net6.0/System.Text.Encoding.CodePages.dll": {
             "related": ".xml"
           }
         },
@@ -866,7 +910,8 @@
           "Microsoft.Data.SqlClient": "5.1.1",
           "Swashbuckle.AspNetCore": "6.5.0",
           "Swashbuckle.AspNetCore.Swagger": "6.5.0",
-          "Swashbuckle.AspNetCore.SwaggerGen": "6.5.0"
+          "Swashbuckle.AspNetCore.SwaggerGen": "6.5.0",
+          "Swashbuckle.AspNetCore.SwaggerUI": "6.5.0"
         },
         "compile": {
           "bin/placeholder/PaisAPI.dll": {}
@@ -957,6 +1002,42 @@
         "lib/net6.0/Azure.Storage.Common.xml",
         "lib/netstandard2.0/Azure.Storage.Common.dll",
         "lib/netstandard2.0/Azure.Storage.Common.xml"
+      ]
+    },
+    "Flurl/3.0.7": {
+      "sha512": "W3zHc8m6/yqOAedHwpFQv5VT8t0W/jkS3AVlv1Tj520KDNjUa31at0zMc3XYJy8f9qdOmUcvSUarf6G2nK1ZIg==",
+      "type": "package",
+      "path": "flurl/3.0.7",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "flurl.3.0.7.nupkg.sha512",
+        "flurl.nuspec",
+        "icon.png",
+        "lib/net461/Flurl.dll",
+        "lib/net461/Flurl.xml",
+        "lib/net472/Flurl.dll",
+        "lib/net472/Flurl.xml",
+        "lib/netstandard2.0/Flurl.dll",
+        "lib/netstandard2.0/Flurl.xml"
+      ]
+    },
+    "Flurl.Http/3.2.4": {
+      "sha512": "Me9Vm4Lm21vt/pbR0G2Dww/ZOjJgh6mB2FiH28aiUYStJD10ZecDp8jxg2zKxcy6lnkvLm99pjG4yC/k7a/d8w==",
+      "type": "package",
+      "path": "flurl.http/3.2.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "flurl.http.3.2.4.nupkg.sha512",
+        "flurl.http.nuspec",
+        "icon.png",
+        "lib/net461/Flurl.Http.dll",
+        "lib/net461/Flurl.Http.xml",
+        "lib/net472/Flurl.Http.dll",
+        "lib/net472/Flurl.Http.xml",
+        "lib/netstandard2.0/Flurl.Http.dll",
+        "lib/netstandard2.0/Flurl.Http.xml"
       ]
     },
     "Microsoft.Bcl.AsyncInterfaces/1.1.1": {
@@ -1631,6 +1712,36 @@
         "runtimes/win/lib/netcoreapp3.1/Microsoft.Win32.SystemEvents.dll",
         "runtimes/win/lib/netcoreapp3.1/Microsoft.Win32.SystemEvents.xml",
         "useSharedDesignerContext.txt"
+      ]
+    },
+    "Newtonsoft.Json/12.0.2": {
+      "sha512": "rTK0s2EKlfHsQsH6Yx2smvcTCeyoDNgCW7FEYyV01drPlh2T243PR2DiDXqtC5N4GDm4Ma/lkxfW5a/4793vbA==",
+      "type": "package",
+      "path": "newtonsoft.json/12.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "lib/net20/Newtonsoft.Json.dll",
+        "lib/net20/Newtonsoft.Json.xml",
+        "lib/net35/Newtonsoft.Json.dll",
+        "lib/net35/Newtonsoft.Json.xml",
+        "lib/net40/Newtonsoft.Json.dll",
+        "lib/net40/Newtonsoft.Json.xml",
+        "lib/net45/Newtonsoft.Json.dll",
+        "lib/net45/Newtonsoft.Json.xml",
+        "lib/netstandard1.0/Newtonsoft.Json.dll",
+        "lib/netstandard1.0/Newtonsoft.Json.xml",
+        "lib/netstandard1.3/Newtonsoft.Json.dll",
+        "lib/netstandard1.3/Newtonsoft.Json.xml",
+        "lib/netstandard2.0/Newtonsoft.Json.dll",
+        "lib/netstandard2.0/Newtonsoft.Json.xml",
+        "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.dll",
+        "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.xml",
+        "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.dll",
+        "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.xml",
+        "newtonsoft.json.12.0.2.nupkg.sha512",
+        "newtonsoft.json.nuspec"
       ]
     },
     "Swashbuckle.AspNetCore/6.5.0": {
@@ -2576,6 +2687,8 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "Flurl >= 3.0.7",
+      "Flurl.Http >= 3.2.4",
       "PaisAPI >= 1.0.0"
     ]
   },
@@ -2585,11 +2698,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\juare\\Google Drive\\CURSOS\\Infnet\\Bloco6\\DesenvWCFAzure\\TPs\\AT\\infnet_bl6_dswcf_at\\PaisMVC\\PaisMVC.csproj",
+      "projectUniqueName": "D:\\Projetos\\CursosDiversos\\Graduacao\\Bloco6\\infnet_bl6_dswcf_at\\PaisMVC\\PaisMVC.csproj",
       "projectName": "PaisMVC",
-      "projectPath": "D:\\juare\\Google Drive\\CURSOS\\Infnet\\Bloco6\\DesenvWCFAzure\\TPs\\AT\\infnet_bl6_dswcf_at\\PaisMVC\\PaisMVC.csproj",
+      "projectPath": "D:\\Projetos\\CursosDiversos\\Graduacao\\Bloco6\\infnet_bl6_dswcf_at\\PaisMVC\\PaisMVC.csproj",
       "packagesPath": "C:\\Users\\juare\\.nuget\\packages\\",
-      "outputPath": "D:\\juare\\Google Drive\\CURSOS\\Infnet\\Bloco6\\DesenvWCFAzure\\TPs\\AT\\infnet_bl6_dswcf_at\\PaisMVC\\obj\\",
+      "outputPath": "D:\\Projetos\\CursosDiversos\\Graduacao\\Bloco6\\infnet_bl6_dswcf_at\\PaisMVC\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\juare\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -2606,8 +2719,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\juare\\Google Drive\\CURSOS\\Infnet\\Bloco6\\DesenvWCFAzure\\TPs\\AT\\infnet_bl6_dswcf_at\\PaisAPI\\PaisAPI.csproj": {
-              "projectPath": "D:\\juare\\Google Drive\\CURSOS\\Infnet\\Bloco6\\DesenvWCFAzure\\TPs\\AT\\infnet_bl6_dswcf_at\\PaisAPI\\PaisAPI.csproj"
+            "D:\\Projetos\\CursosDiversos\\Graduacao\\Bloco6\\infnet_bl6_dswcf_at\\PaisAPI\\PaisAPI.csproj": {
+              "projectPath": "D:\\Projetos\\CursosDiversos\\Graduacao\\Bloco6\\infnet_bl6_dswcf_at\\PaisAPI\\PaisAPI.csproj"
             }
           }
         }
@@ -2621,6 +2734,16 @@
     "frameworks": {
       "net6.0": {
         "targetAlias": "net6.0",
+        "dependencies": {
+          "Flurl": {
+            "target": "Package",
+            "version": "[3.0.7, )"
+          },
+          "Flurl.Http": {
+            "target": "Package",
+            "version": "[3.2.4, )"
+          }
+        },
         "imports": [
           "net461",
           "net462",

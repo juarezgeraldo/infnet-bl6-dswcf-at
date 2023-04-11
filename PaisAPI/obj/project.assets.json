@@ -2557,7 +2557,8 @@
       "Microsoft.Data.SqlClient >= 5.1.1",
       "Swashbuckle.AspNetCore >= 6.5.0",
       "Swashbuckle.AspNetCore.Swagger >= 6.5.0",
-      "Swashbuckle.AspNetCore.SwaggerGen >= 6.5.0"
+      "Swashbuckle.AspNetCore.SwaggerGen >= 6.5.0",
+      "Swashbuckle.AspNetCore.SwaggerUI >= 6.5.0"
     ]
   },
   "packageFolders": {
@@ -2566,11 +2567,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\juare\\Google Drive\\CURSOS\\Infnet\\Bloco6\\DesenvWCFAzure\\TPs\\AT\\infnet_bl6_dswcf_at\\PaisAPI\\PaisAPI.csproj",
+      "projectUniqueName": "D:\\Projetos\\CursosDiversos\\Graduacao\\Bloco6\\infnet_bl6_dswcf_at\\PaisAPI\\PaisAPI.csproj",
       "projectName": "PaisAPI",
-      "projectPath": "D:\\juare\\Google Drive\\CURSOS\\Infnet\\Bloco6\\DesenvWCFAzure\\TPs\\AT\\infnet_bl6_dswcf_at\\PaisAPI\\PaisAPI.csproj",
+      "projectPath": "D:\\Projetos\\CursosDiversos\\Graduacao\\Bloco6\\infnet_bl6_dswcf_at\\PaisAPI\\PaisAPI.csproj",
       "packagesPath": "C:\\Users\\juare\\.nuget\\packages\\",
-      "outputPath": "D:\\juare\\Google Drive\\CURSOS\\Infnet\\Bloco6\\DesenvWCFAzure\\TPs\\AT\\infnet_bl6_dswcf_at\\PaisAPI\\obj\\",
+      "outputPath": "D:\\Projetos\\CursosDiversos\\Graduacao\\Bloco6\\infnet_bl6_dswcf_at\\PaisAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\juare\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -2587,8 +2588,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\juare\\Google Drive\\CURSOS\\Infnet\\Bloco6\\DesenvWCFAzure\\TPs\\AT\\infnet_bl6_dswcf_at\\Domain\\Domain.csproj": {
-              "projectPath": "D:\\juare\\Google Drive\\CURSOS\\Infnet\\Bloco6\\DesenvWCFAzure\\TPs\\AT\\infnet_bl6_dswcf_at\\Domain\\Domain.csproj"
+            "D:\\Projetos\\CursosDiversos\\Graduacao\\Bloco6\\infnet_bl6_dswcf_at\\Domain\\Domain.csproj": {
+              "projectPath": "D:\\Projetos\\CursosDiversos\\Graduacao\\Bloco6\\infnet_bl6_dswcf_at\\Domain\\Domain.csproj"
             }
           }
         }
@@ -2620,6 +2621,10 @@
             "version": "[6.5.0, )"
           },
           "Swashbuckle.AspNetCore.SwaggerGen": {
+            "target": "Package",
+            "version": "[6.5.0, )"
+          },
+          "Swashbuckle.AspNetCore.SwaggerUI": {
             "target": "Package",
             "version": "[6.5.0, )"
           }

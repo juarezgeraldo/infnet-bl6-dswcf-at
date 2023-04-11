@@ -19,7 +19,7 @@ namespace CountriesApi
             {
                 c.SwaggerDoc("v1", new OpenApiInfo
                 {
-                    Title = "CountriesAPI",
+                    Title = "PaisAPI",
                     Version = "v1"
                 });
             });
@@ -35,14 +35,6 @@ namespace CountriesApi
             //    Configuration.GetSection(ConnectionStrings.Name));
 
             //Configure Swagger
-            services.ConfigureSwaggerGen(c =>
-            {
-                c.SwaggerDoc("v1", new OpenApiInfo
-                {
-                    Title = "PaisAPI",
-                    Version = "v1"
-                });
-            });
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -51,22 +43,17 @@ namespace CountriesApi
             {
                 app.UseSwagger();
                 app.UseSwaggerUI();
-                app.UseExceptionHandler("/error-development");
-            }
-            else
-            {
-                app.UseExceptionHandler("/error");
             }
 
             app.UseCors("policy");
 
-            app.UseSwagger();
+            //app.UseSwagger();
 
-            app.UseSwaggerUI(c =>
-            {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "CountriesAPI");
-                c.RoutePrefix = string.Empty;
-            });
+            //app.UseSwaggerUI(c =>
+            //{
+            //    c.SwaggerEndpoint("/swagger/v1/swagger.json", "CountriesAPI");
+            //    c.RoutePrefix = string.Empty;
+            //});
 
             app.UseHttpsRedirection();
 
