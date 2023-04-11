@@ -1,4 +1,5 @@
 ﻿using Domain;
+using PaisAPI.DTO;
 
 namespace EstadoAPI.Services
 {
@@ -8,8 +9,8 @@ namespace EstadoAPI.Services
         List<Estado> SelecionEstadosPais(int Id);
         Estado SelecionaEstadoId(int Id);
 
-        Estado IncluiEstado(Estado estado);
-        Estado AlteraEstado(Estado estado);
+        Estado IncluiEstado(IncluiEstadoDTO incluiEstadoDTO);
+        Estado AlteraEstado(AlteraEstadoDTO alteraEstadoDTO);
         void ExcluiEstado(int Id);
     }
 }

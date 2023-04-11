@@ -1,5 +1,4 @@
-﻿using Azure.Storage.Blobs;
-using Domain;
+﻿using Domain;
 using Microsoft.Data.SqlClient;
 using PaisAPI.DTO;
 
@@ -70,6 +69,7 @@ namespace PaisAPI.Services
 
             pais.BandeiraId = _blobService.CarregaBlob(incluiPaisDTO.BandeiraIdBase64, tipoContainer);
             pais.Nome = incluiPaisDTO.Nome;
+
             using (var connection = new SqlConnection(StringConexao))
             {
                 var procedure = "IncluiPais";

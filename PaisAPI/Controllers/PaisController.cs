@@ -12,7 +12,6 @@ namespace PaisAPI.Controllers
     public class PaisController : ControllerBase
     {
         private readonly IPaisService _paisService;
-
         public PaisController (IPaisService paisService)
         {
             _paisService = paisService;

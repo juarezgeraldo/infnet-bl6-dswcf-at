@@ -1,5 +1,6 @@
 ﻿using Domain;
 using EstadoAPI.Services;
+using PaisAPI.DTO;
 using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -32,11 +33,11 @@ namespace EstadoAPI.Controllers
 
         // POST api/<EstadoController>
         [HttpPost]
-        public IActionResult IncluiEstado([FromBody] Estado estado)
+        public IActionResult IncluiEstado([FromBody] IncluiEstadoDTO incluiEstadoDTO)
         {
             if (ModelState.IsValid)
             {
-                _estadoService.IncluiEstado(estado);
+                _estadoService.IncluiEstado(incluiEstadoDTO);
                 return RedirectToAction(nameof(SelecionaEstados));
             }
             return new EmptyResult();
@@ -44,13 +45,17 @@ namespace EstadoAPI.Controllers
 
         // PUT api/<EstadoController>/5
         [HttpPut("{id}")]
-        public IActionResult AlteraEstado(int id, [FromBody] Estado estado)
+        public IActionResult AlteraEstado(int id, [FromBody] IncluiEstadoDTO incluiEstadoDTO)
         {
             if (ModelState.IsValid)
             {
-                var estadoId = _estadoService.SelecionaEstadoId(id).Id;
-                estado.Id = estadoId;
-                _estadoService.AlteraEstado(estado);
+                var alteraEstadoDTO = new AlteraEstadoDTO();
+                alteraEstadoDTO.Id = id;
+                alteraEstadoDTO.Nome = incluiEstadoDTO.Nome;
+                alteraEstadoDTO.BandeiraIdBase64 = incluiEstadoDTO.BandeiraIdBase64;
+                alteraEstadoDTO.PaisId = incluiEstadoDTO.PaisId;
+
+                _estadoService.AlteraEstado(alteraEstadoDTO);
                 return RedirectToAction(nameof(SelecionaEstados));
             }
             return new EmptyResult();

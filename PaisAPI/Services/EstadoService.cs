@@ -1,15 +1,30 @@
 ﻿using Domain;
 using EstadoAPI.Services;
 using Microsoft.Data.SqlClient;
+using PaisAPI.DTO;
 
 namespace PaisAPI.Services
 {
     public class EstadoService : IEstadoService
     {
-        private readonly string StringConexao = "Data Source=LAPTOP-JUNIOR;Initial Catalog=AZURE_AT;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False";
+        public readonly BlobService _blobService;
 
-        public Estado AlteraEstado(Estado estado)
+        public EstadoService(BlobService blobService)
         {
+            _blobService = blobService;
+        }
+
+        private readonly string StringConexao = "Data Source=LAPTOP-JUNIOR;Initial Catalog=AZURE_AT;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False";
+        private readonly string tipoContainer = "BandeiraEstado";
+        public Estado AlteraEstado(AlteraEstadoDTO alteraEstadoDTO)
+        {
+            var estado = new Estado();
+
+            estado.BandeiraId = _blobService.CarregaBlob(alteraEstadoDTO.BandeiraIdBase64, tipoContainer);
+            estado.Nome = alteraEstadoDTO.Nome;
+            estado.Id = alteraEstadoDTO.Id;
+            estado.PaisId = alteraEstadoDTO.PaisId;
+
             using (var connection = new SqlConnection(StringConexao))
             {
                 var procedure = "AlteraEstado";
@@ -51,8 +66,14 @@ namespace PaisAPI.Services
             };
         }
 
-        public Estado IncluiEstado(Estado estado)
+        public Estado IncluiEstado(IncluiEstadoDTO incluiEstadoDTO)
         {
+            var estado = new Estado();
+
+            estado.BandeiraId = _blobService.CarregaBlob(incluiEstadoDTO.BandeiraIdBase64, tipoContainer);
+            estado.Nome = incluiEstadoDTO.Nome;
+            estado.PaisId = (int) incluiEstadoDTO.PaisId;
+
             using (var connection = new SqlConnection(StringConexao))
             {
                 var procedure = "IncluiEstado";
