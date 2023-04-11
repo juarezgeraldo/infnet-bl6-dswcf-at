@@ -864,7 +864,9 @@
           "Azure.Storage.Blobs": "12.15.1",
           "Domain": "1.0.0",
           "Microsoft.Data.SqlClient": "5.1.1",
-          "Swashbuckle.AspNetCore": "6.5.0"
+          "Swashbuckle.AspNetCore": "6.5.0",
+          "Swashbuckle.AspNetCore.Swagger": "6.5.0",
+          "Swashbuckle.AspNetCore.SwaggerGen": "6.5.0"
         },
         "compile": {
           "bin/placeholder/PaisAPI.dll": {}

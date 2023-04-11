@@ -8,7 +8,7 @@ namespace PaisMVC.Controllers
         // GET: PaisController
         public ActionResult Index()
         {
-            var paises = "https://paises.azurewebsites.net/api/pais".GetEnumerator
+            var paises = "https://paises.azurewebsites.net/api/pais";
             return View();
         }
 
