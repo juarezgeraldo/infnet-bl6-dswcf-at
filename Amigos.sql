@@ -1,14 +1,10 @@
-
+USE [AZURE_AT]
 SET ANSI_NULLS ON
 GO
-
 SET QUOTED_IDENTIFIER ON
 GO
 
 /****** Object:  Table [dbo].[Amigos]  ******/
-ALTER TABLE [dbo].[Amigos] DROP CONSTRAINT [fk_amigo_id]
-GO
-
 IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Amigos]') AND type in (N'U'))
 DROP TABLE [dbo].[Amigos]
 GO

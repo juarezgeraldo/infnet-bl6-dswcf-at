@@ -133,7 +133,7 @@ namespace PaisMVC.Controllers
         {
             try
             {
-                var response = await $"{url}pais/{id}"
+                var response = await $"{url}pais/{pais.Id}"
                     .DeleteAsync();
 
                 return RedirectToAction(nameof(Index));

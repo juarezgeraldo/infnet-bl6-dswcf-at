@@ -28,13 +28,8 @@ namespace PaisApi
             services.AddScoped<IPaisService, PaisService>();
             services.AddScoped<IEstadoService, EstadoService>();
             services.AddScoped<IBlobService, BlobService>();
+            services.AddScoped<IEstatisticaService, EstatisticaService>();
             services.AddTransient<BlobService, BlobService>();
-
-
-            //services.Configure<ConnectionStrings>(
-            //    Configuration.GetSection(ConnectionStrings.Name));
-
-            //Configure Swagger
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

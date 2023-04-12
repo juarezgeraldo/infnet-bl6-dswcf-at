@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Flurl.Http;
+using Microsoft.AspNetCore.Mvc;
 using PaisMVC.Models;
 using System.Diagnostics;
 
@@ -6,16 +7,20 @@ namespace PaisMVC.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly string url = "https://paises.azurewebsites.net/api/";
 
-        public HomeController(ILogger<HomeController> logger)
+        private readonly IConfiguration _configuration;
+        private readonly ILogger<HomeController> _logger;
+        public HomeController(ILogger<HomeController> logger, IConfiguration configuration)
         {
+            _configuration = configuration;
             _logger = logger;
         }
 
-        public IActionResult Index()
+        public async Task<ActionResult> Index()
         {
-            return View();
+            var estatistica = await $"{url}estatistica".GetJsonAsync<Estatistica>();
+            return View(estatistica);
         }
 
         public IActionResult Privacy()

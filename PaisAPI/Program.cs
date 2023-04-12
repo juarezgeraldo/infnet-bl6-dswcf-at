@@ -31,6 +31,7 @@ builder.Services.Configure<ConnectionStrings>(
 builder.Services.AddScoped<IBlobService, BlobService>();
 builder.Services.AddScoped<IPaisService, PaisService>();
 builder.Services.AddScoped<IEstadoService, EstadoService>();
+builder.Services.AddScoped<IEstatisticaService, EstatisticaService>();
 builder.Services.AddTransient<BlobService, BlobService>();
 
 
@@ -42,13 +43,6 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
-//app.UseSwagger();
-//app.UseSwaggerUI(c =>
-//{
-//    c.SwaggerEndpoint("/swagger/v1/swagger.json", "PaisAPI");
-//    c.RoutePrefix = string.Empty;
-//});
 
 app.UseHttpsRedirection();
 

@@ -1,8 +1,17 @@
-﻿@{
+﻿@model PaisMVC.Models.Estatistica
+@{
     ViewData["Title"] = "Home Page";
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">Seja bem-vindo</h1>
+    <h3>Estatísticas do nosso site</h3>
+    <div class="row">
+        <h5>Países cadastrados:</h5>
+        <p>@Model.QtdPaises</p>
+        <h5>Estados cadastrados:</h5>
+        <p>@Model.QtdEstados</p>
+        <h5>Amigos cadastrados:</h5>
+        <p>@Model.QtdAmigos</p>
+    </div>
 </div>
