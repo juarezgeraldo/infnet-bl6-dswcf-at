@@ -1,7 +1,5 @@
-﻿using Flurl;
-using Flurl.Http;
+﻿using Flurl.Http;
 using Microsoft.AspNetCore.Mvc;
-using PaisAPI.DTO;
 using PaisMVC.Models;
 using PaisMVC.Models.Estado;
 using PaisMVC.Models.Pais;
@@ -70,39 +68,74 @@ namespace PaisMVC.Controllers
         }
 
         // GET: PaisController/Edit/5
-        public ActionResult Edit(int id)
+        public async Task<ActionResult> Editar(int id)
         {
-            return View();
+            var country = await $"{url}pais/{id}"
+                .GetJsonAsync<IncluiPais>();
+
+            var estados = await $"{url}estado/pais/{id}"
+                .GetJsonAsync<IEnumerable<Estado>>();
+
+            ViewBag.Estados = estados;
+            ViewBag.NumberOfEstados = estados.Count();
+
+            return View(country);
         }
 
         // POST: PaisController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public async Task<ActionResult> Editar(int id, IncluiPais incluiPais)
         {
             try
             {
+                if (incluiPais.FormFile != null)
+                {
+                    var file = incluiPais.FormFile;
+                    incluiPais.BandeiraIdBase64 = Base64Utils.Base64(file);
+                }
+
+                //BandeiraId = incluiPais.BandeiraId ?? string.Empty,
+                var response = await $"{url}pais/{id}"
+                    .PutJsonAsync(new
+                    {
+                        Nome = incluiPais.Nome,
+                        BandeiraIdBase64 = incluiPais.BandeiraIdBase64
+                    });
+
                 return RedirectToAction(nameof(Index));
             }
-            catch
+            catch (FlurlHttpException ex)
             {
-                return View();
+                ViewBag.ErrorMessage = ex.GetResponseStringAsync();
+                return View(incluiPais);
+            }
+            catch (Exception ex)
+            {
+                ViewBag.ErrorMessage = ex.Message;
+                return View(incluiPais);
             }
         }
 
         // GET: PaisController/Delete/5
-        public ActionResult Delete(int id)
+        public async Task<ActionResult> Excluir(int id)
         {
-            return View();
+            var pais = await $"{url}pais/{id}"
+                .GetJsonAsync<Pais>();
+
+            return View(pais);
         }
 
         // POST: PaisController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        public async Task<ActionResult> Excluir(int id, Pais pais)
         {
             try
             {
+                var response = await $"{url}pais/{id}"
+                    .DeleteAsync();
+
                 return RedirectToAction(nameof(Index));
             }
             catch

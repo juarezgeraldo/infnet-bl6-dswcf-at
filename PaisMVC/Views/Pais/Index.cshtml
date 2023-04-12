@@ -8,7 +8,7 @@
 <h1>Países</h1>
 
 <p>
-    @Html.ActionLink("Inclui novo País", "Inclui", "Paises", null, new { @class="btn btn-success"})
+    @Html.ActionLink("Inclui novo País", "Incluir", "Pais", null, new { @class="btn btn-success"})
 </p>
 
 @{
@@ -25,11 +25,11 @@
     }
     
         <div class="col-6  d-flex">
-            <div class="card">
-            <img class="card-img-top" src="@pais.BandeiraId" alt="@pais.Nome">
+            <div class="card" style="width: 18rem;">
+            <img class="card-img-top " src="@pais.BandeiraId" alt="@pais.Nome">
             <div class="card-body">
                 <h5 class="card-title">@pais.Nome</h5>
-                @Html.ActionLink("Alterar", "Alterar", new { id=pais.Id }, new { @class="btn btn-light"})
+                @Html.ActionLink("Editar", "Editar", new { id=pais.Id }, new { @class="btn btn-light"})
                 @Html.ActionLink("Detalhes", "Detalhes", new { id=pais.Id }, new { @class="btn btn-light"})
                 @Html.ActionLink("Excluir", "Excluir", new { id=pais.Id }, new { @class="btn btn-danger"})
             </div>

@@ -20,7 +20,7 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Edit" enctype="multipart/form-data">
+        <form asp-action="Editar" enctype="multipart/form-data">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Nome" class="control-label"></label>
@@ -36,7 +36,7 @@
             @Html.HiddenFor(m => m.Id)
             @Html.HiddenFor(m => m.BandeiraId)
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <input type="submit" value="Alterar" class="btn btn-primary" />
             </div>
         </form>
     </div>
@@ -46,7 +46,7 @@
 <hr />
 
 <p>
-    @Html.ActionLink("Inclui novo Estado", "Incluir", "Estados", new { id = Model.Id }, new { @class="btn btn-success"})
+    @Html.ActionLink("Incluir novo Estado", "Incluir", "Estado", new { id = Model.Id }, new { @class="btn btn-success"})
 </p>
 
 @{
@@ -67,9 +67,9 @@
             <img class="card-img-top" src="@estado.BandeiraId" alt="@estado.Nome">
             <div class="card-body">
                 <h5 class="card-title">@estado.Nome</h5>
-                @Html.ActionLink("Editar", "Editar","Estados",new { id=estado.Id }, new { @class="btn btn-light"})
-                @Html.ActionLink("Detailhes", "Detailhes","Estados",new { id=estado.Id }, new { @class="btn btn-light"})
-                @Html.ActionLink("Excluir", "Excluir","Estados",new { id=estado.Id }, new { @class="btn btn-danger"})
+                @Html.ActionLink("Editar", "Editar","Estado",new { id=estado.Id }, new { @class="btn btn-light"})
+                @Html.ActionLink("Detailhes", "Detalhes","Estado",new { id=estado.Id }, new { @class="btn btn-light"})
+                @Html.ActionLink("Excluir", "Excluir","Estado",new { id=estado.Id }, new { @class="btn btn-danger"})
             </div>
         </div>
     </div>
@@ -81,7 +81,7 @@
 }
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index">Voltar à lista</a>
 </div>
 
 @section Scripts {
