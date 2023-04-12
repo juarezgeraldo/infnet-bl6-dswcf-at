@@ -122,12 +122,14 @@ GO
 CREATE PROCEDURE [dbo].[SelecionaEstadosPais]
 	@PaisId int
 AS
-	SELECT Id,
-		   Nome,
-		   BandeiraId,
-		   PaisId
-	FROM Estado
-	WHERE PaisId = @PaisId
+	SELECT Estado.Id as Id,
+		   Estado.Nome as Nome,
+		   Estado.BandeiraId as BandeiraId,
+		   Estado.PaisId as PaisId,
+		   Pais.Nome as PaisNome
+	FROM Estado 
+	INNER JOIN Pais ON Pais.Id = Estado.PaisId
+	WHERE Estado.PaisId = @PaisId
 RETURN 0
 GO
 

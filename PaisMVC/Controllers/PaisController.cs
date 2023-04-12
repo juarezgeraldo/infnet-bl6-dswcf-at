@@ -11,7 +11,6 @@ namespace PaisMVC.Controllers
         private readonly IConfiguration _configuration;
 
         private readonly string url = "https://paises.azurewebsites.net/api/";
-        // GET: CountriesController
         public PaisController(IConfiguration configuration)
         {
             _configuration = configuration;
@@ -70,7 +69,7 @@ namespace PaisMVC.Controllers
         // GET: PaisController/Edit/5
         public async Task<ActionResult> Editar(int id)
         {
-            var country = await $"{url}pais/{id}"
+            var pais = await $"{url}pais/{id}"
                 .GetJsonAsync<IncluiPais>();
 
             var estados = await $"{url}estado/pais/{id}"
@@ -79,7 +78,7 @@ namespace PaisMVC.Controllers
             ViewBag.Estados = estados;
             ViewBag.NumberOfEstados = estados.Count();
 
-            return View(country);
+            return View(pais);
         }
 
         // POST: PaisController/Edit/5
@@ -99,6 +98,7 @@ namespace PaisMVC.Controllers
                 var response = await $"{url}pais/{id}"
                     .PutJsonAsync(new
                     {
+                        BandeiraId = incluiPais.BandeiraId ?? string.Empty,
                         Nome = incluiPais.Nome,
                         BandeiraIdBase64 = incluiPais.BandeiraIdBase64
                     });

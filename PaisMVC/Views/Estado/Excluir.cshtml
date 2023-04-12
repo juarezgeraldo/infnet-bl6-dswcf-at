@@ -1,5 +1,4 @@
-﻿@using Microsoft.AspNetCore.Mvc.TagHelpers
-@model PaisMVC.Models.Pais.Pais
+﻿@model PaisMVC.Models.Estado.Estado
 
 @{
     ViewData["Title"] = "Excluir";
@@ -7,9 +6,9 @@
 
 <h1>Excluir</h1>
 
-<h3>Tem certeza de que quer excluir este País?</h3>
+<h3>Tem certeza de que quer excluir este Estado?</h3>
 <div>
-    <h4>País</h4>
+    <h4>Estado</h4>
     <hr />
     <div class="row">
         <div class="col-sm-6">
@@ -17,14 +16,15 @@
                 <img class="card-img-top" src="@Model.BandeiraId" alt="@Model.Nome">
                 <div class="card-body">
                     <h5 class="card-title">@Model.Nome</h5>
+                    <p><b>País: </b> @ViewBag.Pais.Nome</p>
                 </div>
             </div>
         </div>
     </div>
 
     <form asp-action="Excluir">
-        <input type="submit" value="Excluir" class="btn btn-danger" /> 
+        <input type="submit" value="Excluir" class="btn btn-danger" />
         @Html.HiddenFor(m => m.Id)
     </form>
-    @Html.ActionLink("Voltar à lista", "Index", "Pais", null, new { @class="btn btn-primary"})
+    @Html.ActionLink("Voltar à lista", "Detalhes", "Pais", new {id = Model.PaisId}, new { @class="btn btn-light"})
 </div>

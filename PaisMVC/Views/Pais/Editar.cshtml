@@ -27,7 +27,7 @@
                 <input asp-for="Nome" class="form-control" />
                 <span asp-validation-for="Nome" class="text-danger"></span>
             </div>
-            <img class="card-img-top" max-length="100%" src="@Model.BandeiraId" alt="@Model.Nome">
+            <img class="card-img-bottom" style="width: 18rem;" max-length="100%" src="@Model.BandeiraId" alt="@Model.Nome">
             <div class="form-group">
                 <label asp-for="FormFile" class="control-label"></label>
                 <input asp-for="FormFile" class="form-control" type="file"/>
@@ -61,14 +61,13 @@
     {
         @:<div class="row" >
     }
-    
     <div class="col-sm-6">
-        <div class="card">
-            <img class="card-img-top" src="@estado.BandeiraId" alt="@estado.Nome">
+        <div class="card" style="width: 14rem;">
+            <img class="card-img-bottom" src="@estado.BandeiraId" alt="@estado.Nome">
             <div class="card-body">
                 <h5 class="card-title">@estado.Nome</h5>
                 @Html.ActionLink("Editar", "Editar","Estado",new { id=estado.Id }, new { @class="btn btn-light"})
-                @Html.ActionLink("Detailhes", "Detalhes","Estado",new { id=estado.Id }, new { @class="btn btn-light"})
+                @Html.ActionLink("Detalhes", "Detalhes","Estado",new { id=estado.Id }, new { @class="btn btn-light"})
                 @Html.ActionLink("Excluir", "Excluir","Estado",new { id=estado.Id }, new { @class="btn btn-danger"})
             </div>
         </div>

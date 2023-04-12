@@ -12,8 +12,8 @@
     <hr />
     <div class="row">
         <div class="col-sm-6">
-            <div class="card">
-                <img class="card-img-top" src="@Model.BandeiraId" alt="@Model.Nome">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-bottom" src="@Model.BandeiraId" alt="@Model.Nome">
                 <div class="card-body">
                     <h5 class="card-title">@Model.Nome</h5>
                 </div>
@@ -23,31 +23,36 @@
     <h4>Estados</h4>
     <hr />
     @{
-        var numberOfColsNeeded = 2;
+        var numberOfColsNeeded = 4;
         var totalCounter = ViewBag.NumberOfEstados;
         var itemCounter = 1;
+        @:<div class="row" >
     }
 
     @foreach (var pais in ViewBag.Estados)
     {
-        if (itemCounter % numberOfColsNeeded == 1)
+        if (itemCounter % numberOfColsNeeded == 0)
         {
+            @:</div>
             @:<div class="row" >
         }
     
         <div class="col-sm-6">
-            <div class="card">
-                <img class="card-img-top" src="@pais.BandeiraId" alt="@pais.Nome">
+            <div class="card" style="width: 14rem;">
+                <img class="card-img-bottom" src="@pais.BandeiraId" alt="@pais.Nome">
                 <div class="card-body">
                     <h5 class="card-title">@pais.Nome</h5>
                 </div>
             </div>
         </div>
-        if ((itemCounter % numberOfColsNeeded == 0) || ((itemCounter) == totalCounter))
+@*        if ((itemCounter % numberOfColsNeeded == 0) || ((itemCounter) == totalCounter))
         {
             @:</div>
         }
-        itemCounter++;
+*@        itemCounter++;
+    }
+    @{
+            @:</div>
     }
 </div>
 <div>

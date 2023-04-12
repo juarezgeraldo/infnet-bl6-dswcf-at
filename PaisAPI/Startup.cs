@@ -5,7 +5,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.OpenApi.Models;
 using PaisAPI.Services;
 
-namespace CountriesApi
+namespace PaisApi
 {
     public class Startup
     {
@@ -46,14 +46,6 @@ namespace CountriesApi
             }
 
             app.UseCors("policy");
-
-            //app.UseSwagger();
-
-            //app.UseSwaggerUI(c =>
-            //{
-            //    c.SwaggerEndpoint("/swagger/v1/swagger.json", "CountriesAPI");
-            //    c.RoutePrefix = string.Empty;
-            //});
 
             app.UseHttpsRedirection();
 

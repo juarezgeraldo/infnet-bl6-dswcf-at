@@ -1,0 +1,26 @@
+﻿@model PaisMVC.Models.Estado.Estado
+
+@{
+    ViewData["Title"] = "Detalhes";
+}
+
+<h1>Detalhes</h1>
+
+<div>
+    <h4>Estado</h4>
+    <hr />
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="@Model.BandeiraId" alt="@Model.Nome">
+                <div class="card-body">
+                    <h5 class="card-title">@Model.Nome</h5>
+                    <p><b>País: </b> @ViewBag.Pais.Nome</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div>
+    @Html.ActionLink("Voltar à lista", "Detalhes", "Pais", new { id=Model.Id }, new { @class="btn btn-info"})
+</div>

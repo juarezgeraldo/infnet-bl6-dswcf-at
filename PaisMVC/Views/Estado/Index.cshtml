@@ -1,0 +1,43 @@
+﻿@model IEnumerable<PaisMVC.Models.Estado.Estado>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Estados</h1>
+
+<p>
+    @Html.ActionLink("Incluir novo Estado", "Incluir", "Estado", null, new { @class="btn btn-success"})
+</p>
+
+@{
+    var numberOfColsNeeded = 2;
+    var totalCounter = Model.Count();
+    var itemCounter = 1;
+}
+
+@foreach (var estado in Model)
+{
+    if (itemCounter % numberOfColsNeeded == 1)
+    {
+        @:<div class="row" >
+    }
+    
+    <div class="col-sm-6">
+        <div class="card" style="width: 14rem;">
+            <img class="card-img-bottom" src="@estado.BandeiraId" alt="@estado.Nome">
+            <div class="card-body">
+                <h5 class="card-title">@estado.Nome</h5>
+                <p><b>País: </b> @estado.PaisNome</p>
+                @Html.ActionLink("Editar", "Editar", new { id=estado.Id }, new { @class="btn btn-light"})
+                @Html.ActionLink("Detalhes", "Detalhes", new { id=estado.Id }, new { @class="btn btn-light"})
+                @Html.ActionLink("Excluir", "Excluir", new { id=estado.Id }, new { @class="btn btn-danger"})
+            </div>
+        </div>
+    </div>
+    if ((itemCounter % numberOfColsNeeded == 0) || ((itemCounter) == totalCounter))
+    {
+        @:</div>
+    }
+    itemCounter++;
+}
