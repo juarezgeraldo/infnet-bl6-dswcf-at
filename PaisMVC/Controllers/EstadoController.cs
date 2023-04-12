@@ -120,10 +120,10 @@ namespace PaisMVC.Controllers
         // GET: StatesController/Delete/5
         public async Task<ActionResult> Excluir(int id)
         {
-            var state = await $"{url}estado/{id}"
+            var estado = await $"{url}estado/{id}"
                 .GetJsonAsync<Estado>();
 
-            return View(state);
+            return View(estado);
         }
 
         // POST: StatesController/Delete/5

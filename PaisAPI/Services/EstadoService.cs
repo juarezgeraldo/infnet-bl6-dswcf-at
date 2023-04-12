@@ -119,6 +119,7 @@ namespace PaisAPI.Services
                             estado.Nome = leitura["Nome"].ToString();
                             estado.BandeiraId = leitura["BandeiraId"].ToString();
                             estado.PaisId = (int)leitura["PaisId"];
+                            estado.PaisNome = leitura["PaisNome"].ToString();
                         }
                     }
                 }
