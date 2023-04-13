@@ -10,17 +10,17 @@ DROP TABLE [dbo].[Amigos]
 GO
 
 CREATE TABLE [dbo].[Amigos](
+	[Id] [int] NOT NULL,
 	[AmigoId] [int] NOT NULL,
-	[MeuAmigoId] [int] NOT NULL,
 PRIMARY KEY CLUSTERED 
 (
-	[AmigoId] ASC,
-	[MeuAmigoId] ASC
+	[Id] ASC,
+	[AmigoId] ASC
 )WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
 
-ALTER TABLE [dbo].[Amigos]  WITH CHECK ADD  CONSTRAINT [fk_amigo_id] FOREIGN KEY([AmigoId])
+ALTER TABLE [dbo].[Amigos]  WITH CHECK ADD  CONSTRAINT [fk_amigo_id] FOREIGN KEY([Id])
 REFERENCES [dbo].[Amigo] ([Id])
 ON DELETE CASCADE
 GO
@@ -28,39 +28,39 @@ GO
 ALTER TABLE [dbo].[Amigos] CHECK CONSTRAINT [fk_amigo_id]
 GO
 
-/****** Object:  StoredProcedure [dbo].[IncluiMeusAmigos] ******/
-DROP PROCEDURE [dbo].[IncluiMeusAmigos]
+/****** Object:  StoredProcedure [dbo].[IncluiAmigoList] ******/
+DROP PROCEDURE [dbo].[IncluiAmigoList]
 GO
 
-CREATE PROCEDURE [dbo].[IncluiMeusAmigos]
+CREATE PROCEDURE [dbo].[IncluiAmigoList]
 	@Id int,
-	@NewAmigoId int
+	@AmigoId int
 AS
-	INSERT INTO Amigos (AmigoId, MeuAmigoId)
-	VALUES (@Id, @NewAmigoId)
+	INSERT INTO Amigos (Id, AmigoId)
+	VALUES (@Id, @AmigoId)
 RETURN 0
 GO
 
 
-/****** Object:  StoredProcedure [dbo].[ExcluiMeusAmigos] ******/
-DROP PROCEDURE [dbo].[ExcluiMeusAmigos]
+/****** Object:  StoredProcedure [dbo].[ExcluiAmigoList] ******/
+DROP PROCEDURE [dbo].[ExcluiAmigoList]
 GO
 
-CREATE PROCEDURE [dbo].[ExcluiMeusAmigos]
+CREATE PROCEDURE [dbo].[ExcluiAmigoList]
 	@Id int,
-	@OldAmigoId int
+	@AmigoId int
 AS
 	DELETE Amigos
-	WHERE AmigoId = @Id AND MeuAmigoId = @OldAmigoId
+	WHERE Id = @Id AND AmigoId = @AmigoId
 RETURN 0
 GO
 
 
-/****** Object:  StoredProcedure [dbo].[SelecionaMeusAmigos] ******/
-DROP PROCEDURE [dbo].[SelecionaMeusAmigos]
+/****** Object:  StoredProcedure [dbo].[SelecionaAmigosAmigo] ******/
+DROP PROCEDURE [dbo].[SelecionaAmigosAmigo]
 GO
 
-CREATE PROCEDURE [dbo].[SelecionaMeusAmigos]
+CREATE PROCEDURE [dbo].[SelecionaAmigosAmigo]
 	@Id int
 AS
 	SELECT 
@@ -74,8 +74,8 @@ AS
 		Amigo.PaisId,
 		Amigo.EstadoId
 	FROM Amigo
-	INNER JOIN Amigos ON Amigo.Id = Amigos.MeuAmigoId
-	WHERE AmigoId = @Id
+	INNER JOIN Amigos ON Amigo.Id = Amigos.AmigoId
+	WHERE Amigos.Id = @Id
 RETURN 0
 GO
 
