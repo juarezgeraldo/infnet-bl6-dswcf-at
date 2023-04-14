@@ -76,7 +76,7 @@
 <hr />
 @{
     var numberOfColsNeeded = 4;
-    var totalCounter = ViewBag?.NumeroAmigos;
+    var totalCounter = ViewBag?.TotalAmigosList;
     var itemCounter = 1;
 }
 
@@ -109,11 +109,11 @@
 <hr />
 
 @{
-    var totalCounter2 = ViewBag?.TotalAmigosList;
+    var totalCounter2 = ViewBag?.NumeroAmigos;
     var itemCounter2 = 1;
 }
 
-@foreach (var amigo in ViewBag?.AmigoList)
+@foreach (var amigo in ViewBag?.Amigos)
 {
     if (itemCounter2 % numberOfColsNeeded == 1)
     {

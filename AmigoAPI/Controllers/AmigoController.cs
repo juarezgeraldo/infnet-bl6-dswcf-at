@@ -85,7 +85,7 @@ namespace AmigoAPI.Controllers
             return _amigoService.SelecionaAmigosAmigo(amigoId);
         }
 
-        [HttpPost("amigos/{Id}/{amigoId}")]
+        [HttpPut("amigos/{Id}/{amigoId}")]
         public IActionResult IncluiAmigoList(int Id, int amigoId)
         {
             if (ModelState.IsValid)

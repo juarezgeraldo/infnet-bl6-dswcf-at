@@ -171,5 +171,25 @@ namespace PaisMVC.Controllers
                 return View();
             }
         }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> IncluiAmigoList(IncluiAmigoList incluiAmigoList)
+        {
+            try
+            {
+                var id = incluiAmigoList?.Id;
+                var amigoId = incluiAmigoList?.AmigoId;
+
+                var response = await $"{url}amigo/amigos/{id}/{amigoId}"
+                    .PutJsonAsync(null);
+
+                return RedirectToAction(nameof(Detalhes), new { id = id });
+            }
+            catch
+            {
+                return View(incluiAmigoList);
+            }
+        }
+
     }
 }

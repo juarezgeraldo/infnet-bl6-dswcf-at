@@ -33,7 +33,7 @@ GO
 CREATE PROCEDURE [dbo].[IncluiAmigo]
 	@Nome varchar(50),
 	@Sobrenome varchar(50),
-	@FotografiaId varchar(100),
+	@FotografiaId varchar(255),
 	@Email varchar(50),
 	@Telefone varchar(50),
 	@Nascimento date,
@@ -83,7 +83,7 @@ CREATE PROCEDURE [dbo].[AlteraAmigo]
 	@Id int,
 	@Nome varchar(50),
 	@Sobrenome varchar(50),
-	@FotografiaId varchar(100),
+	@FotografiaId varchar(255),
 	@Email varchar(50),
 	@Telefone varchar(50),
 	@Nascimento date,
