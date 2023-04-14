@@ -55,7 +55,7 @@ namespace PaisAPI.Controllers
                 alteraPaisDTO.BandeiraIdBase64 = incluiPaisDTO.BandeiraIdBase64;
 
                 _paisService.AlteraPais(alteraPaisDTO);
-                return RedirectToAction(nameof(SelecionaPaises));
+                return Ok();
             }
             return new EmptyResult();
         }

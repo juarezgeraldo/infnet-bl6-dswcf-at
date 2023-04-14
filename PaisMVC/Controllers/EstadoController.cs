@@ -79,6 +79,12 @@ namespace PaisMVC.Controllers
 
             ViewBag.Pais = pais;
 
+            var paises = await $"{url}pais"
+                .GetJsonAsync<IEnumerable<Pais>>();
+
+            ViewBag.Paises = paises;
+
+
             return View(estado);
         }
 
@@ -100,7 +106,8 @@ namespace PaisMVC.Controllers
                     {
                         PhotoId = incluiEstado.BandeiraId ?? string.Empty,
                         incluiEstado.Nome,
-                        incluiEstado.BandeiraIdBase64
+                        incluiEstado.BandeiraIdBase64,
+                        incluiEstado.PaisId
                     });
 
                 return RedirectToAction("Detalhes", "Pais", new { id = incluiEstado.PaisId });

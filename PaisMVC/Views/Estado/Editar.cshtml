@@ -32,6 +32,20 @@
                 <input asp-for="FormFile" class="form-control" type="file" />
                 <span asp-validation-for="FormFile" class="text-danger"></span>
             </div>
+            <div class="form-group">
+                <label asp-for="PaisId" class="control-label">País</label>
+                <select id="PaisId" name="PaisId" class="form-select">
+                    @{
+                        if (ViewBag?.Paises != null)
+                        {
+                            foreach (var pais in ViewBag.Paises)
+                            {
+                                <option value="@pais.Id">@pais.Nome</option>
+                            }
+                        }
+                    }
+                </select>
+            </div>
             @Html.HiddenFor(m => m.Id)
             @Html.HiddenFor(m => m.BandeiraId)
             <div class="form-group">

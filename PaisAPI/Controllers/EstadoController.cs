@@ -61,7 +61,7 @@ namespace EstadoAPI.Controllers
                 alteraEstadoDTO.PaisId = incluiEstadoDTO.PaisId;
 
                 _estadoService.AlteraEstado(alteraEstadoDTO);
-                return RedirectToAction(nameof(SelecionaEstados));
+                return Ok();
             }
             return new EmptyResult();
         }
