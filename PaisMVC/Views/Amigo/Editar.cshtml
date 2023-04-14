@@ -107,40 +107,55 @@
 }
 
 <hr />
+<h4>Outros Amigos</h4>
+<hr />
 
 @{
     var totalCounter2 = ViewBag?.NumeroAmigos;
     var itemCounter2 = 1;
+    var ehAmigo = false;
 }
 
-@foreach (var amigo in ViewBag?.Amigos)
+@foreach (var amigo in ViewBag.Amigos)
 {
-    if (itemCounter2 % numberOfColsNeeded == 1)
-    {
-        @:<div class="row" >
-    }
+    ehAmigo = false;
 
-    <div class="col-sm-3">
-        <div class="card">
-            <img class="card-img-top" src="@amigo.FotografiaId" alt="@amigo.Nome">
-            <div class="card-body">
-                <h5 class="card-title">@amigo.Nome @amigo.Sobrenome</h5>
-                <p>@amigo.Nascimento</p>
-                <p>@amigo.Telefone</p>
-                <p>@amigo.Email</p>
-                @Html.ActionLink("Adiciona a lista de Amigos", "IncluiAmigoList", new { Id=Model.Id, AmigoId = amigo.Id }, new { @class="btn btn-success"})
+    @foreach (var amigoList in ViewBag.AmigoList)
+    {
+        if (amigoList.Id == amigo.Id)
+        {
+            ehAmigo = true;
+            break;
+        }
+    }
+    if(!ehAmigo){
+        if (itemCounter2 % numberOfColsNeeded == 1)
+        {
+            @:<div class="row" >
+        }
+
+        <div class="col-sm-3">
+            <div class="card">
+                <img class="card-img-top" src="@amigo.FotografiaId" alt="@amigo.Nome">
+                <div class="card-body">
+                    <h5 class="card-title">@amigo.Nome @amigo.Sobrenome</h5>
+                    <p>@amigo.Nascimento</p>
+                    <p>@amigo.Telefone</p>
+                    <p>@amigo.Email</p>
+                    @Html.ActionLink("Adiciona a lista de Amigos", "IncluiAmigoLista", new { Id=Model.Id, AmigoId = amigo.Id }, new { @class="btn btn-success"})
+                </div>
             </div>
         </div>
-    </div>
-    if ((itemCounter2 % numberOfColsNeeded == 0) || ((itemCounter2) == totalCounter2))
-    {
-        @:</div>
+        if ((itemCounter2 % numberOfColsNeeded == 0) || ((itemCounter2) == totalCounter2))
+        {
+            @:</div>
+        }
+        itemCounter2++;
     }
-    itemCounter2++;
 }
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index">Voltar à lista</a>
 </div>
 
 @section Scripts {

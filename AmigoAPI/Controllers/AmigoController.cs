@@ -91,7 +91,7 @@ namespace AmigoAPI.Controllers
             if (ModelState.IsValid)
             {
                 _amigoService.IncluiAmigoList(Id, amigoId);
-                return RedirectToAction(nameof(SelecionaAmigos));
+                return Ok();
             }
             return new EmptyResult();
         }

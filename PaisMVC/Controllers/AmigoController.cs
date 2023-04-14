@@ -88,7 +88,7 @@ namespace PaisMVC.Controllers
             var estados = await $"{urlPais}estado"
                 .GetJsonAsync<IEnumerable<Estado>>();
 
-            var AmigoList = await $"{url}amigo/amigos/{id}"
+            var amigoList = await $"{url}amigo/amigos/{id}"
                 .GetJsonAsync<IEnumerable<Amigo>>();
 
             var amigos = await $"{url}amigo"
@@ -102,13 +102,11 @@ namespace PaisMVC.Controllers
 
             amigo.EstadoPais = $"{amigo.EstadoId}-{amigo.PaisId}";
 
-            amigos = amigos.Where(f => f.Id != id && !AmigoList.Contains(f));
-
             ViewBag.Estado = estado;
             ViewBag.Pais = pais;
-            ViewBag.AmigoList = AmigoList;
+            ViewBag.AmigoList = amigoList;
             ViewBag.Amigos = amigos;
-            ViewBag.NumeroAmigos = AmigoList.Count();
+            ViewBag.NumeroAmigos = amigoList.Count();
             ViewBag.TotalAmigosList = amigos.Count();
 
             ViewBag.Estados = estados;
@@ -171,9 +169,24 @@ namespace PaisMVC.Controllers
                 return View();
             }
         }
+        public async Task<ActionResult> IncluiAmigoLista(int id, int amigoId)
+        {
+            var amigo = await $"{url}amigo/{id}"
+                .GetJsonAsync<Amigo>();
+
+            var amigoList = await $"{url}amigo/{amigoId}"
+                .GetJsonAsync<Amigo>();
+
+            return View(new IncluiAmigoList
+            {
+                Amigo = amigo,
+                AmigoList = amigoList
+            });
+        }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> IncluiAmigoList(IncluiAmigoList incluiAmigoList)
+        public async Task<ActionResult> IncluiAmigoLista(IncluiAmigoList incluiAmigoList)
         {
             try
             {
@@ -191,5 +204,39 @@ namespace PaisMVC.Controllers
             }
         }
 
+        public async Task<ActionResult> ExcluiAmigoList(int id, int amigoId)
+        {
+            var amigo = await $"{url}amigo/{id}"
+                .GetJsonAsync<Amigo>();
+
+            var amigoList = await $"{url}amigo/{amigoId}"
+                .GetJsonAsync<Amigo>();
+
+            return View(new IncluiAmigoList
+            {
+                Amigo = amigo,
+                AmigoList = amigoList
+            });
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> ExcluiAmigoList(IncluiAmigoList incluiAmigoList)
+        {
+            try
+            {
+                var id = incluiAmigoList?.Id;
+                var amigoId = incluiAmigoList?.AmigoId;
+
+                var response = await $"{url}amigo/amigos/{id}/{amigoId}"
+                    .DeleteAsync();
+
+                return RedirectToAction(nameof(Detalhes), new { id = id });
+            }
+            catch
+            {
+                return View(incluiAmigoList);
+            }
+        }
     }
 }

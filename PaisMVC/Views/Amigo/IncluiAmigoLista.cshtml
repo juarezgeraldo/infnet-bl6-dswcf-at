@@ -1,0 +1,66 @@
+﻿@model PaisMVC.Models.Amigo.IncluiAmigoList
+
+@{
+    ViewData["Title"] = "IncluiAmigoLista";
+}
+
+@{
+    if (ViewBag != null && ViewBag?.ErrorMessage != null)
+    {
+        <div class="alert alert-danger">
+            <p>@ViewBag.ErrorMessage</p>
+        </div>
+    }
+}
+
+<h1>Adicionar amigo</h1>
+
+<h4>Amigo</h4>
+<hr />
+<div class="col-sm-3">
+    <div class="card">
+        <img class="card-img-top" src="@Model.Amigo?.FotografiaId" alt="@Model.Amigo?.Nome">
+        <div class="card-body">
+            <h5 class="card-title">@Model.Amigo.Nome @Model.Amigo.Sobrenome</h5>
+            <p>@Model.Amigo.Nascimento</p>
+            <p>@Model.Amigo.Telefone</p>
+            <p>@Model.Amigo.Email</p>
+        </div>
+    </div>
+</div>
+
+<h4>Novo Amigo</h4>
+<hr />
+
+<div class="col-sm-3">
+    <div class="card">
+        <img class="card-img-top" src="@Model.AmigoList.FotografiaId" alt="@Model.AmigoList.Nome">
+        <div class="card-body">
+            <h5 class="card-title">@Model.AmigoList.Nome @Model.AmigoList.Sobrenome</h5>
+            <p>@Model.AmigoList.Nascimento</p>
+            <p>@Model.AmigoList.Telefone</p>
+            <p>@Model.AmigoList.Email</p>
+        </div>
+    </div>
+</div>
+
+<form asp-action="IncluiAmigoLista" enctype="multipart/form-data">
+    <div>
+        <h5>Tem certeza de que quer adicionar este novo Amibo?</h5>
+    </div>
+    @Html.HiddenFor(m => m.Id)
+    @Html.HiddenFor(m => m.AmigoId)
+    <div class="form-group">
+        <input type="submit" value="Adiciona Amigo" class="btn btn-primary" />
+    </div>
+</form>
+
+<div>
+    <a asp-action="Index">Voltar à lista</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

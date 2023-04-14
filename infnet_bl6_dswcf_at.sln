@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Domain\Domain.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PaisMVC", "PaisMVC\PaisMVC.csproj", "{7EDEBB1C-30A7-4F63-9122-72CE94009962}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AmigoAPI", "AmigoAPI\AmigoAPI.csproj", "{2C2D6249-F205-407C-9671-F11C5BA4C69F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AmigoAPI", "AmigoAPI\AmigoAPI.csproj", "{2C2D6249-F205-407C-9671-F11C5BA4C69F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
