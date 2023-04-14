@@ -1,0 +1,148 @@
+﻿@model PaisMVC.Models.Amigo.IncluiAmigo
+
+@{
+    ViewData["Title"] = "Editar";
+}
+
+<h1>Editar</h1>
+
+@{
+    if (ViewBag != null && ViewBag?.ErrorMessage != null)
+    {
+        <div class="alert alert-danger">
+            <p>@ViewBag.ErrorMessage</p>
+        </div>
+    }
+}
+
+<h4>Editar Amigo</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Editar" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Nome" class="control-label"></label>
+                <input asp-for="Nome" class="form-control" />
+                <span asp-validation-for="Nome" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Sobrenome" class="control-label"></label>
+                <input asp-for="Sobrenome" class="form-control" />
+                <span asp-validation-for="Sobrenome" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Nascimento" class="control-label"></label>
+                <input asp-for="Nascimento" class="form-control" />
+                <span asp-validation-for="Nascimento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Telefone" class="control-label"></label>
+                <input asp-for="Telefone" class="form-control" />
+                <span asp-validation-for="Telefone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EstadoId" class="control-label">Country & State</label>
+                <select id="EstadoPais" name="EstadoPais" class="form-select">
+                    @{
+                        if (ViewBag?.Estados != null)
+                        {
+                            foreach (var estado in ViewBag.Estados)
+                            {
+                                <option value="@estado.Id-@estado.PaisId">@estado.PaisNome - @estado.Nome</option>
+                            }
+                        }
+                    }
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="FormFile" class="control-label">Fotografia</label>
+                <input asp-for="FormFile" class="form-control" type="file" />
+                <span asp-validation-for="FormFile" class="text-danger"></span>
+            </div>
+            @Html.HiddenFor(m => m.Id)
+            <div class="form-group">
+                <input type="submit" value="Atualizar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+<h4>Lista de Amigos</h4>
+<hr />
+@{
+    var numberOfColsNeeded = 4;
+    var totalCounter = ViewBag?.NumeroAmigos;
+    var itemCounter = 1;
+}
+
+@foreach (var amigo in ViewBag.AmigoList)
+{
+    if (itemCounter % numberOfColsNeeded == 1)
+    {
+        @:<div class="row" >
+    }
+
+        <div class="col-sm-3">
+            <div class="card">
+                <img class="card-img-top" src="@amigo.FotografiaId" alt="@amigo.Nome">
+                <div class="card-body">
+                    <h5 class="card-title">@amigo.Nome @amigo.Sobrenome</h5>
+                    <p>@amigo.Nascimento</p>
+                    <p>@amigo.Telefone</p>
+                    <p>@amigo.Email</p>
+                @Html.ActionLink("Exclui", "ExcluiAmigoList", new { Id=Model.Id, AmigoId = amigo.Id }, new { @class="btn btn-danger"})
+                </div>
+            </div>
+        </div>
+    if ((itemCounter % numberOfColsNeeded == 0) || ((itemCounter) == totalCounter))
+    {
+        @:</div>
+    }
+    itemCounter++;
+}
+
+<hr />
+
+@{
+    var totalCounter2 = ViewBag?.TotalAmigosList;
+    var itemCounter2 = 1;
+}
+
+@foreach (var amigo in ViewBag?.AmigoList)
+{
+    if (itemCounter2 % numberOfColsNeeded == 1)
+    {
+        @:<div class="row" >
+    }
+
+    <div class="col-sm-3">
+        <div class="card">
+            <img class="card-img-top" src="@amigo.FotografiaId" alt="@amigo.Nome">
+            <div class="card-body">
+                <h5 class="card-title">@amigo.Nome @amigo.Sobrenome</h5>
+                <p>@amigo.Nascimento</p>
+                <p>@amigo.Telefone</p>
+                <p>@amigo.Email</p>
+                @Html.ActionLink("Adiciona a lista de Amigos", "IncluiAmigoList", new { Id=Model.Id, AmigoId = amigo.Id }, new { @class="btn btn-success"})
+            </div>
+        </div>
+    </div>
+    if ((itemCounter2 % numberOfColsNeeded == 0) || ((itemCounter2) == totalCounter2))
+    {
+        @:</div>
+    }
+    itemCounter2++;
+}
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

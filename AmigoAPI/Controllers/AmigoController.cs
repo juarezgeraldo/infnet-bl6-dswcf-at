@@ -80,7 +80,7 @@ namespace AmigoAPI.Controllers
         }
 
         [HttpGet("amigos/{amigoId}")]
-        public IEnumerable<Amigo> SelecionaEstadosPais(int amigoId)
+        public IEnumerable<Amigo> SelecionaAmigosAmigo(int amigoId)
         {
             return _amigoService.SelecionaAmigosAmigo(amigoId);
         }

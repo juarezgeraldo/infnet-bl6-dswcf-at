@@ -16,6 +16,26 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = D:\juare\Google Drive\CURSOS\Infnet\Bloco6\DesenvWCFAzure\TPs\AT\infnet_bl6_dswcf_at\PaisMVC
 build_property._RazorSourceGeneratorDebug = 
 
+[D:/juare/Google Drive/CURSOS/Infnet/Bloco6/DesenvWCFAzure/TPs/AT/infnet_bl6_dswcf_at/PaisMVC/Views/Estado/Detalhes.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXN0YWRvXERldGFsaGVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/juare/Google Drive/CURSOS/Infnet/Bloco6/DesenvWCFAzure/TPs/AT/infnet_bl6_dswcf_at/PaisMVC/Views/Estado/Editar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXN0YWRvXEVkaXRhci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/juare/Google Drive/CURSOS/Infnet/Bloco6/DesenvWCFAzure/TPs/AT/infnet_bl6_dswcf_at/PaisMVC/Views/Estado/Excluir.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXN0YWRvXEV4Y2x1aXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/juare/Google Drive/CURSOS/Infnet/Bloco6/DesenvWCFAzure/TPs/AT/infnet_bl6_dswcf_at/PaisMVC/Views/Estado/Incluir.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXN0YWRvXEluY2x1aXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/juare/Google Drive/CURSOS/Infnet/Bloco6/DesenvWCFAzure/TPs/AT/infnet_bl6_dswcf_at/PaisMVC/Views/Estado/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXN0YWRvXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/juare/Google Drive/CURSOS/Infnet/Bloco6/DesenvWCFAzure/TPs/AT/infnet_bl6_dswcf_at/PaisMVC/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

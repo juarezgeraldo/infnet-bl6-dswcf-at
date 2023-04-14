@@ -1,0 +1,61 @@
+﻿@model PaisMVC.Models.Amigo.Amigo
+
+@{
+    ViewData["Title"] = "Detalhes";
+}
+
+<h1>Detalhes</h1>
+
+<div>
+    <h4>Amigo</h4>
+    <hr />
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="@Model.FotografiaId" alt="@Model.Nome">
+                <div class="card-body">
+                    <h5 class="card-title">@Model.Nome @Model.Sobrenome</h5>
+                    <p>Telefone: @Model.Telefone</p>
+                    <p>E-mail: @Model.Email</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<h4>Lista de Amigos</h4>
+@{
+    var numberOfColsNeeded = 4;
+    var totalCounter = ViewBag?.NumberOfFriends;
+    var itemCounter = 1;
+}
+
+@foreach (var amigo in ViewBag?.AmigoList)
+{
+    if (itemCounter % numberOfColsNeeded == 1)
+    {
+        @:<div class="row" >
+    }
+
+    <div class="col-sm-3">
+        <div class="card">
+            <img class="card-img-top" src="@amigo.FotografiaId" alt="@amigo.Nome">
+            <div class="card-body">
+                <h5 class="card-title">@amigo.Nome @amigo.Sobrenome</h5>
+                <p>@amigo.Nascimento</p>
+                <p>@amigo.Telefone</p>
+                <p>@amigo.Email</p>
+            </div>
+        </div>
+    </div>
+    if ((itemCounter % numberOfColsNeeded == 0) || ((itemCounter) == totalCounter))
+    {
+        @:</div>
+    }
+    itemCounter++;
+}
+
+<div>
+    @Html.ActionLink("Editar", "Editar", new { id=Model.Id }, new { @class="btn btn-light"})
+    @Html.ActionLink("Voltar para lista de amigos", "Index", new { id = Model.Id  }, new { @class="btn btn-light"})
+</div>

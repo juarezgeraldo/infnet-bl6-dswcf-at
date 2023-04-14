@@ -170,3 +170,8 @@ D:\juare\Google Drive\CURSOS\Infnet\Bloco6\DesenvWCFAzure\TPs\AT\infnet_bl6_dswc
 D:\juare\Google Drive\CURSOS\Infnet\Bloco6\DesenvWCFAzure\TPs\AT\infnet_bl6_dswcf_at\PaisMVC\obj\Debug\net6.0\PaisMVC.pdb
 D:\juare\Google Drive\CURSOS\Infnet\Bloco6\DesenvWCFAzure\TPs\AT\infnet_bl6_dswcf_at\PaisMVC\obj\Debug\net6.0\PaisMVC.genruntimeconfig.cache
 D:\juare\Google Drive\CURSOS\Infnet\Bloco6\DesenvWCFAzure\TPs\AT\infnet_bl6_dswcf_at\PaisMVC\obj\Debug\net6.0\ref\PaisMVC.dll
+D:\juare\Google Drive\CURSOS\Infnet\Bloco6\DesenvWCFAzure\TPs\AT\infnet_bl6_dswcf_at\PaisMVC\bin\Debug\net6.0\AmigoAPI.deps.json
+D:\juare\Google Drive\CURSOS\Infnet\Bloco6\DesenvWCFAzure\TPs\AT\infnet_bl6_dswcf_at\PaisMVC\bin\Debug\net6.0\AmigoAPI.runtimeconfig.json
+D:\juare\Google Drive\CURSOS\Infnet\Bloco6\DesenvWCFAzure\TPs\AT\infnet_bl6_dswcf_at\PaisMVC\bin\Debug\net6.0\AmigoAPI.exe
+D:\juare\Google Drive\CURSOS\Infnet\Bloco6\DesenvWCFAzure\TPs\AT\infnet_bl6_dswcf_at\PaisMVC\bin\Debug\net6.0\AmigoAPI.dll
+D:\juare\Google Drive\CURSOS\Infnet\Bloco6\DesenvWCFAzure\TPs\AT\infnet_bl6_dswcf_at\PaisMVC\bin\Debug\net6.0\AmigoAPI.pdb

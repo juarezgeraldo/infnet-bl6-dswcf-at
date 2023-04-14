@@ -13,7 +13,7 @@ CREATE TABLE [dbo].[Amigo](
 	[Id] [int] IDENTITY(1,1) NOT NULL,
 	[Nome] [varchar](50) NOT NULL,
 	[Sobrenome] [varchar](50) NOT NULL,
-	[FotografiaId] [varchar](100) NULL,
+	[FotografiaId] [varchar](255) NULL,
 	[Email] [varchar](50) NOT NULL,
 	[Telefone] [varchar](25) NULL,
 	[Nascimento] [date] NULL,

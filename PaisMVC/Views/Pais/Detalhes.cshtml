@@ -31,13 +31,12 @@
 
     @foreach (var pais in ViewBag.Estados)
     {
-        if (itemCounter % numberOfColsNeeded == 0)
+        if (itemCounter % numberOfColsNeeded == 1)
         {
-            @:</div>
             @:<div class="row" >
         }
     
-        <div class="col-sm-6">
+        <div class="col-sm-3">
             <div class="card" style="width: 14rem;">
                 <img class="card-img-bottom" src="@pais.BandeiraId" alt="@pais.Nome">
                 <div class="card-body">
@@ -45,11 +44,11 @@
                 </div>
             </div>
         </div>
-@*        if ((itemCounter % numberOfColsNeeded == 0) || ((itemCounter) == totalCounter))
+        if ((itemCounter % numberOfColsNeeded == 0) || ((itemCounter) == totalCounter))
         {
             @:</div>
         }
-*@        itemCounter++;
+        itemCounter++;
     }
     @{
             @:</div>
