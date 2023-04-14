@@ -12,7 +12,7 @@ namespace PaisAPI.Controllers
     public class PaisController : ControllerBase
     {
         private readonly IPaisService _paisService;
-        public PaisController (IPaisService paisService)
+        public PaisController(IPaisService paisService)
         {
             _paisService = paisService;
         }
@@ -64,13 +64,8 @@ namespace PaisAPI.Controllers
         [HttpDelete("{id}")]
         public IActionResult ExcluiPais(int id)
         {
-            if (ModelState.IsValid)
-            {
-                var pais = _paisService.SelecionaPaisId(id);
-                _paisService.ExcluiPais(id);
-                return RedirectToAction(nameof(SelecionaPaises));
-            }
-            return new EmptyResult();
+            _paisService.ExcluiPais(id);
+            return Ok();
         }
     }
 }

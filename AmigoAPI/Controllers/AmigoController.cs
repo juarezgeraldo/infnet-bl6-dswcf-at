@@ -70,13 +70,8 @@ namespace AmigoAPI.Controllers
         [HttpDelete("{id}")]
         public IActionResult ExcluiAmigo(int id)
         {
-            if (ModelState.IsValid)
-            {
-                var pais = _amigoService.SelecionaAmigoId(id);
-                _amigoService.ExcluiAmigo(id);
-                return RedirectToAction(nameof(SelecionaAmigos));
-            }
-            return new EmptyResult();
+            _amigoService.ExcluiAmigo(id);
+            return Ok();
         }
 
         [HttpGet("amigos/{amigoId}")]
@@ -98,12 +93,8 @@ namespace AmigoAPI.Controllers
         [HttpDelete("amigos/{Id}/{amigoId}")]
         public IActionResult ExcluiAmigoList(int Id, int amigoId)
         {
-            if (ModelState.IsValid)
-            {
-                _amigoService.ExcluiAmigoList(Id, amigoId);
-                return RedirectToAction(nameof(SelecionaAmigos));
-            }
-            return new EmptyResult();
+            _amigoService.ExcluiAmigoList(Id, amigoId);
+            return Ok();
         }
     }
 }

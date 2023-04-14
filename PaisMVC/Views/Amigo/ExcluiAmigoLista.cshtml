@@ -1,19 +1,10 @@
 ﻿@model PaisMVC.Models.Amigo.IncluiAmigoList
 
 @{
-    ViewData["Title"] = "IncluiAmigoLista";
+    ViewData["Title"] = "Exclui amigo da lista";
 }
 
-@{
-    if (ViewBag != null && ViewBag?.ErrorMessage != null)
-    {
-        <div class="alert alert-danger">
-            <p>@ViewBag.ErrorMessage</p>
-        </div>
-    }
-}
-
-<h1>Adicionar amigo</h1>
+<h1>Excluir amigo da lista</h1>
 
 <h4>Amigo</h4>
 <hr />
@@ -29,11 +20,11 @@
     </div>
 </div>
 
-<h4>Novo Amigo</h4>
+<h4>Amigo a excluir</h4>
 <hr />
 
 <div class="col-sm-3">
-    <div class="card" style="width: 14rem;">
+    <div class="card" style="width: 18rem;">
         <img class="card-img-top" style="width: 18rem; height: 14rem; max-height: 100%;" src="@Model.AmigoList.FotografiaId" alt="@Model.AmigoList.Nome">
         <div class="card-body">
             <h5 class="card-title">@Model.AmigoList.Nome @Model.AmigoList.Sobrenome</h5>
@@ -44,14 +35,14 @@
     </div>
 </div>
 
-<form asp-action="IncluiAmigoLista" enctype="multipart/form-data">
+<form asp-action="ExcluiAmigoLista" enctype="multipart/form-data">
     <div>
-        <h5>Tem certeza de que quer adicionar este novo Amibo?</h5>
+        <h5>Você tem certeza de que quer excluir este Amigo de sua lista?</h5>
     </div>
     @Html.HiddenFor(m => m.Id)
     @Html.HiddenFor(m => m.AmigoId)
     <div class="form-group">
-        <input type="submit" value="Adiciona Amigo" class="btn btn-primary" />
+        <input type="submit" value="Exclui Amigo da lista" class="btn btn-primary"/>
     </div>
 </form>
 
@@ -60,7 +51,5 @@
 </div>
 
 @section Scripts {
-    @{
-        await Html.RenderPartialAsync("_ValidationScriptsPartial");
-    }
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

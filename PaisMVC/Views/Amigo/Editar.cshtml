@@ -88,14 +88,14 @@
     }
 
         <div class="col-sm-3">
-            <div class="card">
-                <img class="card-img-top" src="@amigo.FotografiaId" alt="@amigo.Nome">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" style="width: 18rem; height: 14rem; max-height: 100%;" src="@amigo.FotografiaId" alt="@amigo.Nome">
                 <div class="card-body">
                     <h5 class="card-title">@amigo.Nome @amigo.Sobrenome</h5>
                     <p>@amigo.Nascimento</p>
                     <p>@amigo.Telefone</p>
                     <p>@amigo.Email</p>
-                @Html.ActionLink("Exclui", "ExcluiAmigoList", new { Id=Model.Id, AmigoId = amigo.Id }, new { @class="btn btn-danger"})
+                @Html.ActionLink("Exclui", "ExcluiAmigoLista", new { Id=Model.Id, AmigoId = amigo.Id }, new { @class="btn btn-danger"})
                 </div>
             </div>
         </div>
@@ -135,8 +135,8 @@
         }
 
         <div class="col-sm-3">
-            <div class="card">
-                <img class="card-img-top" src="@amigo.FotografiaId" alt="@amigo.Nome">
+            <div class="card" style="width: 14rem;">
+                <img class="card-img-top" style="width: 14rem; height: 14rem; max-height: 100%;" src="@amigo.FotografiaId" alt="@amigo.Nome">
                 <div class="card-body">
                     <h5 class="card-title">@amigo.Nome @amigo.Sobrenome</h5>
                     <p>@amigo.Nascimento</p>

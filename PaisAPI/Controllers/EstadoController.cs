@@ -12,7 +12,7 @@ namespace EstadoAPI.Controllers
     public class EstadoController : ControllerBase
     {
         private readonly IEstadoService _estadoService;
-        public EstadoController (IEstadoService estadoService)
+        public EstadoController(IEstadoService estadoService)
         {
             _estadoService = estadoService;
         }
@@ -70,13 +70,8 @@ namespace EstadoAPI.Controllers
         [HttpDelete("{id}")]
         public IActionResult ExcluiEstado(int id)
         {
-            if (ModelState.IsValid)
-            {
-                var estado = _estadoService.SelecionaEstadoId(id);
-                _estadoService.ExcluiEstado(id);
-                return RedirectToAction(nameof(SelecionaEstados));
-            }
-            return new EmptyResult();
+            _estadoService.ExcluiEstado(id);
+            return Ok();
         }
     }
 }

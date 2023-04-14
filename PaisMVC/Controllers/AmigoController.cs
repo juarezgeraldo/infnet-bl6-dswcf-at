@@ -106,8 +106,8 @@ namespace PaisMVC.Controllers
             ViewBag.Pais = pais;
             ViewBag.AmigoList = amigoList;
             ViewBag.Amigos = amigos;
-            ViewBag.NumeroAmigos = amigoList.Count();
-            ViewBag.TotalAmigosList = amigos.Count();
+            ViewBag.NumeroAmigos = amigos.Count();
+            ViewBag.TotalAmigosList = amigoList.Count();
 
             ViewBag.Estados = estados;
 
@@ -150,18 +150,24 @@ namespace PaisMVC.Controllers
         }
 
         // GET: AmigoController/Delete/5
-        public ActionResult Delete(int id)
+        public async Task<ActionResult> Excluir(int id)
         {
-            return View();
+            var amigo = await $"{url}amigo/{id}"
+                .GetJsonAsync<Amigo>();
+
+            return View(amigo);
         }
 
         // POST: AmigoController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        public async Task<ActionResult> Excluir(Amigo amigo)
         {
             try
             {
+                var amigoExcluido = await $"{url}amigo/{amigo.Id}"
+                    .DeleteAsync();
+
                 return RedirectToAction(nameof(Index));
             }
             catch
@@ -204,7 +210,7 @@ namespace PaisMVC.Controllers
             }
         }
 
-        public async Task<ActionResult> ExcluiAmigoList(int id, int amigoId)
+        public async Task<ActionResult> ExcluiAmigoLista(int id, int amigoId)
         {
             var amigo = await $"{url}amigo/{id}"
                 .GetJsonAsync<Amigo>();
@@ -221,7 +227,7 @@ namespace PaisMVC.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> ExcluiAmigoList(IncluiAmigoList incluiAmigoList)
+        public async Task<ActionResult> ExcluiAmigoLista(IncluiAmigoList incluiAmigoList)
         {
             try
             {

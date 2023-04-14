@@ -1,0 +1,29 @@
+﻿@model PaisMVC.Models.Amigo.Amigo
+    ViewData["Title"] = "Excluir";
+}
+
+<h1>Excluir</h1>
+
+<h3>Tem certeza de que quer excluir este Amigo?</h3>
+<div>
+    <h4>Estado</h4>
+    <hr />
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-bottom" src="@Model.FotografiaId" alt="@Model.Nome">
+                <div class="card-body">
+                    <h5 class="card-title">@Model.Nome @Model.Sobrenome</h5>
+                    <p>Telefone: @Model.Telefone</p>
+                    <p>E-mail: @Model.Email</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <form asp-action="Excluir">
+        <input type="submit" value="Excluir" class="btn btn-danger" />
+        @Html.HiddenFor(m => m.Id)
+    </form>
+    @Html.ActionLink("Voltar à lista", "Detalhes", "Amigo", new {id = Model.Id}, new { @class="btn btn-light"})
+</div>
