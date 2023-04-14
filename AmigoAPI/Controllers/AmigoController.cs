@@ -61,7 +61,7 @@ namespace AmigoAPI.Controllers
                 alteraAmigoDTO.PaisId = incluiAmigoDTO.PaisId;
 
                 _amigoService.AlteraAmigo(alteraAmigoDTO);
-                return RedirectToAction(nameof(SelecionaAmigos));
+                return Ok();
             }
             return new EmptyResult();
         }

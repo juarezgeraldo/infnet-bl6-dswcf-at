@@ -122,12 +122,13 @@
 
     @foreach (var amigoList in ViewBag.AmigoList)
     {
-        if (amigoList.Id == amigo.Id)
+        if (amigoList.Id == amigo.Id || @Model.Id == amigoList.Id)
         {
             ehAmigo = true;
             break;
         }
     }
+    if(Model.Id == amigo.Id){ ehAmigo = true;  }
     if(!ehAmigo){
         if (itemCounter2 % numberOfColsNeeded == 1)
         {
